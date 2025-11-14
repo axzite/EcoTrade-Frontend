@@ -1,0 +1,25 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #3baf21, #6ddf40);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #6ddf40, #3baf21);
+}
+
+/* 🧩 Adjust position for smaller screens */

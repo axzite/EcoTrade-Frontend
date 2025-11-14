@@ -1,0 +1,199 @@
+/* MyOrders.css */
+.my-orders {
+  max-width: 1200px; /* wider container */
+  width: 95%;        /* responsive width */
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9f7; /* subtle background for contrast */
+  min-height: 100vh;
+}
+.my-orders h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.my-orders h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #ff6b6b;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.my-orders-order {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 100px 140px 120px;
+  align-items: center;
+  padding: 18px 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.my-orders-order:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #ff6b6b33;
+}
+
+.my-orders-order img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  padding: 8px;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+.my-orders-order > p:nth-child(2) {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.my-orders-order > p:nth-child(3) {
+  font-weight: 600;
+  color: #2e8b57;
+  font-size: 1.1rem;
+}
+
+.my-orders-order > p:nth-child(4) {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.my-orders-order > p:nth-child(5) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+.my-orders-order > p:nth-child(5) span {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  animation: pulse 2s infinite;
+}
+
+.my-orders-order > p:nth-child(5) b {
+  color: #333;
+  text-transform: capitalize;
+}
+
+/* Status-based dot color */
+.my-orders-order > p:nth-child(5) span[data-status="Delivered"] {
+  color: #28a745;
+}
+
+.my-orders-order > p:nth-child(5) span[data-status="Out for Delivery"] {
+  color: #ffc107;
+}
+
+.my-orders-order > p:nth-child(5) span[data-status="Processing"] {
+  color: #17a2b8;
+}
+
+.my-orders-order > p:nth-child(5) span[data-status="Cancelled"] {
+  color: #dc3545;
+}
+
+.my-orders-order button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.my-orders-order button:hover {
+  background: #ff5252;
+  transform: scale(1.05);
+}
+
+.my-orders-order button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .my-orders-order {
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .my-orders-order img {
+    grid-row: 1 / -1;
+    align-self: start;
+  }
+
+  .my-orders-order > p:nth-child(2) {
+    grid-column: 2 / -1;
+    white-space: normal;
+    max-width: none;
+  }
+
+  .my-orders-order > p:nth-child(3),
+  .my-orders-order > p:nth-child(4),
+  .my-orders-order > p:nth-child(5),
+  .my-orders-order button {
+    grid-column: 2 / -1;
+  }
+
+  .my-orders-order button {
+    width: fit-content;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-orders {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .my-orders h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Pulse animation for status dot */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Empty state */
+.container:empty::after {
+  content: "No orders yet. Start shopping!";
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 40px;
+  display: block;
+}

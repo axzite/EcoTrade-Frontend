@@ -1,0 +1,16 @@
+{
+  "name": "Khara AgroTech",
+  "short_name": "Bhogprada",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+      
+    }
+  ]
+}

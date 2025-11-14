@@ -1,0 +1,256 @@
+/* PlaceOrder.css */
+.place-order {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  gap: 40px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #f9f9fb;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.place-order-left,
+.place-order-right {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.place-order-left {
+  border: 1px solid #e0e0e0;
+}
+
+.place-order-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Title Styling */
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #28a745;
+  border-radius: 2px;
+}
+
+/* Form Inputs */
+.place-order input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.place-order input:focus {
+  outline: none;
+  border-color: #28a745;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+  transform: translateY(-1px);
+}
+
+.place-order input::placeholder {
+  color: #999;
+}
+
+/* Multi-field Row */
+.multi-field {
+  display: flex;
+  gap: 16px;
+}
+
+.multi-field input {
+  flex: 1;
+}
+
+/* Cart Total Section */
+.cart-total {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px dashed #ddd;
+}
+
+.cart-total h2 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #2d3748;
+}
+
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.cart-total-details b {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.cart-total hr {
+  border: none;
+  border-top: 1px dashed #ccc;
+  margin: 12px 0;
+}
+
+/* Payment Options */
+.payment {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px dashed #ddd;
+}
+
+.payment h2 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #2d3748;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+  background: white;
+}
+
+.payment-option:hover {
+  border-color: #ff6b6b;
+  background: #fff5f5;
+}
+
+.payment-option img {
+  width: 20px;
+  height: 20px;
+}
+
+.payment-option p {
+  margin: 0;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Selected Payment */
+.payment-option.active,
+.payment-option:has(input:checked) {
+  border-color: #ff6b6b;
+  background: #fff0f0;
+  box-shadow: 0 0 0 1px #28a745;
+}
+
+/* Submit Button */
+.place-order-submit {
+  margin-top: auto;
+  padding: 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.place-order-submit:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+.place-order-submit:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .place-order {
+    flex-direction: column;
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .place-order-left,
+  .place-order-right {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .multi-field {
+    flex-direction: column;
+  }
+
+  .place-order {
+    margin: 20px auto;
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .cart-total,
+  .payment {
+    padding: 16px;
+  }
+
+  .place-order-submit {
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
+
+/* Focus Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Optional: Add floating animation to submit button */
+.place-order-submit {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Empty Cart Message (Optional Enhancement) */
+.place-order:empty::after {
+  content: "Your cart is empty.";
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 40px;
+}

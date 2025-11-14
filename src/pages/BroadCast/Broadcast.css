@@ -1,0 +1,151 @@
+.broadcast-layout {
+  display: flex;
+  min-height: 90vh;
+  background: linear-gradient(135deg, #eafbea, #d6f5d6);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #2e8b57, #1f6f43);
+  color: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
+}
+
+.sidebar-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 8px;
+}
+
+.seller-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seller-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.seller-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.03);
+}
+
+.seller-item.active {
+  background: white;
+  color: #2e8b57;
+  font-weight: 600;
+}
+
+.no-sellers {
+  text-align: center;
+  opacity: 0.8;
+  padding: 20px 0;
+}
+
+/* Content Area */
+.broadcast-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.broadcast-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #2e8b57, #1f6f43);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.seller-header {
+  font-size: 1.4rem;
+  color: #2e8b57;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message-card {
+  background: white;
+  border-left: 6px solid #1f6f43;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.message-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
+}
+
+.message-card h4 {
+  color: #2e8b57;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.message-card p {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.message-card small {
+  display: block;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.no-message {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .broadcast-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-radius: 0;
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .seller-item {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  .broadcast-content {
+    padding: 20px;
+  }
+}
